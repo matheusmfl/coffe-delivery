@@ -17,6 +17,7 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: #FAFAFA
+  background-color: '#FAFAFA';
+  margin: 0 auto;
+  max-width: 1440px;
 }
