@@ -23,12 +23,12 @@ function IconHero({ content }: iconHeroProps) {
 export function Hero() {
   return (
     <main className="px-40 py-24 flex gap-8 relative">
-      <div className="absolute left-[-100px]">
+      <div className="absolute left-[-100px] -z-10">
         <Image src={bgImage} alt="bg-image" />
       </div>
       <div className="flex flex-col gap-10">
         <div className="flex text-left items-center flex-col gap-4">
-          <h1 className="font-extrabold font-sans text-5xl text-black">
+          <h1 className="text-5xl font-alt font-extrabold text-[#272221]">
             Encontre o café perfeito para qualquer hora do dia
           </h1>
           <span className="font-normal font-sans text-xl text-slate-500">
