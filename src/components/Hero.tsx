@@ -1,28 +1,64 @@
-'use client'
-import { ShoppingCart } from '@phosphor-icons/react'
 import heroImg from '../../public/heroImg.png'
 import Image from 'next/image'
+import packageIcon from '../assets/iconPackage.svg'
+import timeIcon from '../assets/iconTime.svg'
+import coffeIcon from '../assets/iconCoffe.svg'
+import cartIcon from '../assets/iconCart.svg'
 
 import bgImage from '../../public/bg-image.png'
 
 type iconHeroProps = {
   content: string
+  type: 'package' | 'coffe' | 'time' | 'cart'
 }
 
-function IconHero({ content }: iconHeroProps) {
-  return (
-    <div className="flex items-center justify-center gap-4 w-[231px]">
-      <button className="p-2 bg-purple-100 flex rounded-full text-purple-600 items-center justify-center gap-2">
-        <ShoppingCart size={22} fill="orange" />
-      </button>
-      <span className="text-gray-700 font-normal text-left">{content}</span>
-    </div>
-  )
+function IconHero({ content, type }: iconHeroProps) {
+  switch (type) {
+    case 'package':
+      return (
+        <div className="flex items-center justify-center gap-4 w-[231px] font-sans text-base">
+          <button className="">
+            <Image src={packageIcon} alt="Icon" width={32} height={32} />
+          </button>
+          <span className="text-gray-700 font-normal text-left">{content}</span>
+        </div>
+      )
+
+    case 'coffe':
+      return (
+        <div className="flex items-center justify-center gap-4 w-[231px] font-sans text-base">
+          <button className="">
+            <Image src={coffeIcon} alt="Icon" width={32} height={32} />
+          </button>
+          <span className="text-gray-700 font-normal text-left">{content}</span>
+        </div>
+      )
+
+    case 'time':
+      return (
+        <div className="flex items-center justify-center gap-4 w-[231px] font-sans text-base">
+          <button className="">
+            <Image src={timeIcon} alt="Icon" width={32} height={32} />
+          </button>
+          <span className="text-gray-700 font-normal text-left">{content}</span>
+        </div>
+      )
+
+    case 'cart':
+      return (
+        <div className="flex items-center justify-center gap-4 w-[231px] font-sans text-base">
+          <button className="">
+            <Image src={cartIcon} alt="Icon" width={32} height={32} />
+          </button>
+          <span className="text-gray-700 font-normal text-left">{content}</span>
+        </div>
+      )
+  }
 }
 
 export function Hero() {
   return (
-    <main className="px-40 py-24 flex gap-8 relative">
+    <main className="px-36 py-24 flex gap-8 relative">
       <div className="absolute left-[-100px] -z-10">
         <Image src={bgImage} alt="bg-image" />
       </div>
@@ -39,12 +75,15 @@ export function Hero() {
 
         <div className="flex flex-col gap-6">
           <div className="flex gap-2">
-            <IconHero content="Compra simples e segura" />
-            <IconHero content="Embalagem mantém o café intacto" />
+            <IconHero type="cart" content="Compra simples e segura" />
+            <IconHero type="coffe" content="Embalagem mantém o café intacto" />
           </div>
           <div className="flex gap-2">
-            <IconHero content="Entrega rápida e rastreada" />
-            <IconHero content="O café chega fresquinho até você" />
+            <IconHero type="time" content="Entrega rápida e rastreada" />
+            <IconHero
+              type="package"
+              content="O café chega fresquinho até você"
+            />
           </div>
         </div>
       </div>

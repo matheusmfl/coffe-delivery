@@ -3,7 +3,7 @@ import { coffeeList } from '@/utils/fakeApi'
 
 export function SectionCards() {
   return (
-    <section className="px-40 flex flex-col gap-10">
+    <section className="px-20 py-10 flex flex-col gap-10">
       <span>Nossos Cafés</span>
 
       <div className="grid grid-cols-4 gap-x-8 gap-y-12">
